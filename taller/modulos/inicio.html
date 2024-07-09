@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes</title>
+    <link rel="stylesheet" href="./view/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>¡Viaja con Nosotros!</h1>
+    </header>
+    <main>
+        <section id="cities">
+            <h2>Ciudades Disponibles</h2>
+            <div class="city">
+                <img src="./images/istockphoto-466497932-612x612.jpg" alt="Cartagena">
+                <h3>Cartagena</h3>
+                <div class="plans">
+                    <div class="plan">
+                        <h4>Básico</h4>
+                        <p>$1.5 millones</p>
+                    </div>
+                    <div class="plan">
+                        <h4>Familiar</h4>
+                        <p>$2.5 millones</p>
+                    </div>
+                    <div class="plan">
+                        <h4>Full</h4>
+                        <p>$4 millones</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city">
+                <img src="./images/0d5f3612-city-10076-177d80eab0a.jpg" alt="Santa Marta">
+                <h3>Santa Marta</h3>
+                <div class="plans">
+                    <div class="plan">
+                        <h4>Básico</h4>
+                        <p>$1.5 millones</p>
+                    </div>
+                    <div class="plan">
+                        <h4>Familiar</h4>
+                        <p>$2.5 millones</p>
+                    </div>
+                    <div class="plan">
+                        <h4>Full</h4>
+                        <p>$4 millones</p>
+                    </div>
+                </div>
+            </div>
+            <div class="city">
+                <img src="./images/481902d4d03765b5f47361f66d2cdb18.webp" alt="San Andrés">
+                <h3>San Andrés</h3>
+                <div class="plans">
+                    <div class="plan">
+                        <h4>Básico</h4>
+                        <p>$1.5 millones</p>
+                    </div>
+                    <div class="plan">
+                        <h4>Familiar</h4>
+                        <p>$2.5 millones</p>
+                    </div>
+                    <div class="plan">
+                        <h4>Full</h4>
+                        <p>$4 millones</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="calculator">
+            <h2>Cotización de Viaje</h2>
+            <form id="quotationForm">
+                <label for="citySelect">Selecciona una Ciudad:</label>
+                <select id="citySelect">
+                    <option value="Cartagena">Cartagena</option>
+                    <option value="Santa Marta">Santa Marta</option>
+                    <option value="San Andrés">San Andrés</option>
+                </select>
+
+                <label for="planSelect">Selecciona un Plan:</label>
+                <select id="planSelect">
+                    <option value="Básico">Básico ($1.5 millones)</option>
+                    <option value="Familiar">Familiar ($2.5 millones)</option>
+                    <option value="Full">Full ($4 millones)</option>
+                </select>
+
+                <label for="people">Cantidad de Personas:</label>
+                <input type="number" id="people" min="1" max="50" value="1">
+
+                <button type="button" id="calculateButton">Calcular Cotización</button>
+            </form>
+
+            <div id="quotationResult">
+                <h3>Resultado de Cotización</h3>
+                <p>Ciudad seleccionada: <span id="selectedCity"></span></p>
+                <p>Plan seleccionado: <span id="selectedPlan"></span></p>
+                <p>Cantidad de personas: <span id="selectedPeople"></span></p>
+                <p>Total a Pagar: <span id="totalPrice"></span></p>
+            </div>
+        </section>
+        <section id="userRegistration">
+            <h2>Registro de Usuario</h2>
+            <form id="registrationForm">
+                <label for="userName">Nombre:</label>
+                <input type="text" id="userName" required>
+                <label for="userDocument">Documento:</label>
+                <input type="text" id="userDocument" required>
+                <p></p>
+                <label for="userAddress">Dirección:</label>
+                <input type="text" id="userAddress" required>
+                <label for="userPhone">Teléfono:</label>
+                <input type="text" id="userPhone" required>
+                <p></p>
+                <label for="userPlan">Plan:</label>
+                <select id="userPlan">
+                    <option value="Básico">Básico</option>
+                    <option value="Familiar">Familiar</option>
+                    <option value="Full">Full</option>
+                </select>
+                <p></p>
+                <button type="button" id="registerUserButton">Registrar Usuario</button>
+            </form>
+        </section>
+        <section id="summary">
+            <h2>Resumen del Día</h2>
+            <button type="button" id="clientListButton">Listado de Clientes</button>
+            <button type="button" id="accumulatedMoneyButton">Acumulado de Dinero por Plan</button>
+            <button type="button" id="cityRegistrationsButton">Cantidad de Registros por Ciudad</button>
+            <div id="summaryResult"></div>
+        </section>
+    </main>
+    <footer>
+        <p id="quotationCounter">Usuarios que han usado el cotizador: 0</p>
+        <p id="actualTravelers">Personas que están viajando: 0</p>
+    </footer>
+
+    <script type="module" src="./controller/controller.js"></script>
+</body>
+
+</html>
